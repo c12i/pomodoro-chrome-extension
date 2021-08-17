@@ -45,7 +45,9 @@ startTimer.addEventListener('click', () => {
                 isRunning: !isRunning,
             },
             () => {
-                startTimer.textContent = !isRunning ? '⏸' : '▶️'
+                startTimer.textContent = !isRunning
+                    ? 'Pause Timer'
+                    : 'Resume Timer'
             }
         )
     })
@@ -63,7 +65,7 @@ chrome.storage.sync.get(['tasks'], (result) => {
 
 function saveTasks() {
     chrome.storage.sync.set({ tasks }, () => {
-        startTimer.textContent = '▶️'
+        startTimer.textContent = 'Start Timer'
     })
 }
 
@@ -82,6 +84,7 @@ function renderTask(taskNum) {
             type: 'text',
             placeholder: 'enter a task',
             value: tasks[taskNum],
+            className: 'task-input',
             onchange: (e) => {
                 tasks[taskNum] = e.target.value
                 saveTasks()
@@ -89,6 +92,7 @@ function renderTask(taskNum) {
         }),
         elt('input', {
             type: 'button',
+            className: 'task-delete',
             value: 'x',
             onclick: () => {
                 tasks.splice(taskNum, 1)
