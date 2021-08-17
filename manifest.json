@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "pomodoro timer",
+    "version": "0.1.0",
+    "description": "a tool that will help you focus and get get things done",
+    "icons": {
+        "16": "icons/tomato.png",
+        "48": "icons/tomato.png",
+        "128": "icons/tomato.png"
+    },
+    "action": {
+        "default_icon": "icons/tomato.png",
+        "default_title": "pomodoro timer",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": ["storage", "alarms", "notifications"],
+    "background": {
+        "service_worker": "background/background.js"
+    },
+    "options_page": "options/options.html"
+}
