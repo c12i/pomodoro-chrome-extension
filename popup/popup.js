@@ -65,7 +65,9 @@ chrome.storage.sync.get(['tasks'], (result) => {
 
 function saveTasks() {
     chrome.storage.sync.set({ tasks }, () => {
-        startTimer.textContent = 'Start Timer'
+        chrome.storage.sync.get(['isRunning'], ({ isRunning }) => {
+            startTimer.textContent = isRunning ? 'Pause Timer' : 'Start Timer'
+        })
     })
 }
 
