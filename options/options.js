@@ -1,4 +1,4 @@
-const timeOptionInput = document.getElementById('time-option')
+const timeOptionInput = document.getElementById('time-option-input')
 timeOptionInput.addEventListener('change', (e) => {
     const { value } = e.target
     if (value < 1 || value > 60) {
@@ -13,6 +13,7 @@ saveBtn.addEventListener('click', () => {
         timer: 0,
         isRunning: false,
     })
+    alert('Options Saved')
 })
 
 chrome.storage.local.get(['timeOption'], ({ timeOption }) => {

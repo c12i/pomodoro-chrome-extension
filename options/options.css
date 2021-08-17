@@ -1,0 +1,47 @@
+body {
+    background-color: indianred;
+}
+
+.header {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.time-option > h2 {
+    font-weight: normal;
+    color: whitesmoke;
+}
+
+#time-option-input {
+    outline: none;
+    border: none;
+    width: 300px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#save-btn {
+    outline: none;
+    margin-top: 30px;
+    border: none;
+    display: block;
+    border-radius: 4px;
+    padding: 10px;
+    color: indianred;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#save-btn:hover {
+    color: whitesmoke;
+    background: indianred;
+    border: solid 2px whitesmoke;
+}
